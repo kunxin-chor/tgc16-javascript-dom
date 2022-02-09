@@ -20,5 +20,27 @@ btn.addEventListener('click', function(){
             break;
         }
     }
-    console.log(name, email, rating);
+
+    // to get all the values of the selected checkboxes
+    // since there might be more than one selected checkbox
+    // we use querySelectorAll
+    // let selectedCheckboxes = document.querySelectorAll('.hear-about:checked');
+    // let hearAbout = []; // use an array as the default value
+    //                     // because more than 1 can be selected
+    // for (let checkbox of selectedCheckboxes) {
+    //     // .push is to add to the back of an array
+    //     hearAbout.push(checkbox.value);
+    // }
+
+    // using linear search to find all the selected checkboxes
+    let allCheckboxes = document.getElementsByClassName('hear-about');
+    let hearAbout = [];
+    for (let checkbox of allCheckboxes) {
+        if (checkbox.checked == true) {
+            hearAbout.push(checkbox.value);
+        
+        }
+    }
+
+    console.log(name, email, rating, hearAbout);
 })
